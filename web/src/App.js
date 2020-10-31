@@ -1,11 +1,15 @@
+import { BrowserRouter } from 'react-router-dom';
+import Navigator from './components/Navigator/';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Meu site</h1>
-      <p>Uau, como meu site é belo e organizado...</p>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navigator />
+        <p>Uau, como meu site é belo e organizado...</p>
+      </div>
+    </BrowserRouter>
   );
 }
 
