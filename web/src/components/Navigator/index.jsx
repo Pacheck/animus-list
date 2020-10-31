@@ -1,15 +1,20 @@
 import React from 'react';
 
 import { Link } from "react-router-dom";
-import logo from '../../assets/logo2.svg'
+
 import nomeLogo from '../../assets/nome-logo2.svg'
 
 import './index.css';
 
 const Navigator = () => {
     return (
-        <header>
-           <img src={nomeLogo} alt="nome logo"/>
+        <header className="Nav">
+           <Link to="/">
+                <img src={nomeLogo} alt="nome logo"/>
+           </Link>
+           <Link to="teste">
+               <h2>Testando</h2>
+            </Link>
         </header>
     )
 }
