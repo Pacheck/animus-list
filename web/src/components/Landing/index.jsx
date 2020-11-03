@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Navigator from '../Navigator';
 
@@ -8,16 +8,11 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 
 const Landing = () => {
-    
-    const api = useAPI();
+    const api = useAPI('anime/1/pictures');
     console.log(api)
-
     return (
         <div className="landing-page">
-            <Navigator />
-            
-            
-
+            <Navigator />  
         </div>
     )
 }
