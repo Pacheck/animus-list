@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+import './index.css'
+
 import Navigator from '../Navigator';
 
 import useAPI from '../../hooks/api.js';
@@ -25,25 +27,28 @@ const Landing = () => {
     return (
         <div className="landing-page">
             <Navigator />
-            <Carousel>
-                <div>
-                    <img src={imageTest1} alt="testando"/>
-                    <p className="legend">Legend 1</p>
-                </div>
-                
-                <div>
-                    <img src={imageTest2} alt="testando"/>
-                    <p className="legend">Legend 3</p>
-                </div>
-                <div>
-                    <img src={imageTest1} alt="testando"/>
-                    <p className="legend">Legend 2</p>
-                </div>
-                <div>
-                    <img src={imageTest2} alt="testando"/>
-                    <p className="legend">Legend 3</p>
-                </div>
-            </Carousel>
+            <div className="carrousel-container">
+                <Carousel autoPlay={true} infiniteLoop={true} width="700px">
+                    {images.map(img => {
+                        return <div key={img.large}>
+                        <img src={img.large} alt="testando"/>
+                        <p className="legend">Legend 1</p>
+                    </div>
+                    })}
+                    {/* <div>
+                        <img src={imageTest2} alt="testando"/>
+                        <p className="legend">Legend 3</p>
+                    </div>
+                    <div>
+                        <img src={imageTest1} alt="testando"/>
+                        <p className="legend">Legend 2</p>
+                    </div>
+                    <div>
+                        <img src={imageTest2} alt="testando"/>
+                        <p className="legend">Legend 3</p>
+                    </div> */}
+                </Carousel>
+            </div>
         </div>
     )
 }

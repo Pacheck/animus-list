@@ -1,0 +1,5 @@
+.landing-page .carrousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

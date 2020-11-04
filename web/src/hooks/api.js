@@ -8,9 +8,11 @@ export default async (path) => {
   useEffect(() => {
     const fetchData = async (path) => {
       const pathURL = path ? `/${path}` : '';
-      const result = await axios.get(`https://api.jikan.moe/v3${pathURL}`);
+      const result = await axios
+        .get(`https://api.jikan.moe/v3${pathURL}`)
+        .then((res) => setResponse(res.data.pictures));
 
-      setResponse(result.data.pictures);
+      // setResponse(result.data.pictures);
     };
 
     fetchData(path);
