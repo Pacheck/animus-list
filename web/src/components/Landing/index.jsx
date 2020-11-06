@@ -13,9 +13,10 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 
 const Landing = () => {
-
-    const api = useAPI('anime/1/pictures');
-
+    
+    // const api = useAPI('anime/1/pictures');
+    const api = useAPI('search/anime?q=sword art online');
+    console.log(api)
     const [images, setImages] = useState([]);
 
     useEffect(() => {
@@ -27,28 +28,27 @@ const Landing = () => {
     return (
         <div className="landing-page">
             <Navigator />
-            <div className="carrousel-container">
-                <Carousel autoPlay={true} infiniteLoop={true} width="700px">
+           
+           <div className="landing-page-container">
+                <Carousel autoPlay infiniteLoop showThumbs={false} showIndicators={false}>
                     {images.map(img => {
-                        return <div key={img.large}>
-                        <img src={img.large} alt="testando"/>
-                        <p className="legend">Legend 1</p>
-                    </div>
+                        return(
+                            <a href={img.url} target="_blank" key={img.image_url}>
+                                <div>
+                                <img src={img.image_url} alt="testando"/>
+                                <p className="legend">{img.title}</p>
+                                </div>
+                            </a>
+                        )
                     })}
-                    {/* <div>
-                        <img src={imageTest2} alt="testando"/>
-                        <p className="legend">Legend 3</p>
-                    </div>
-                    <div>
-                        <img src={imageTest1} alt="testando"/>
-                        <p className="legend">Legend 2</p>
-                    </div>
-                    <div>
-                        <img src={imageTest2} alt="testando"/>
-                        <p className="legend">Legend 3</p>
-                    </div> */}
                 </Carousel>
+                    <div className="landing-info">
+                        <p className="text-area">Uma página criada a partir do site MAL, via web scrapping</p>
+                        <button>Next</button>
+                    </div>
             </div>
+                
+            
         </div>
     )
 }
