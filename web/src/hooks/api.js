@@ -9,8 +9,12 @@ export default async (path) => {
     const fetchData = async (path) => {
       const pathURL = path ? `/${path}` : '';
       const result = await axios
-        .get(`https://api.jikan.moe/v3${pathURL}`)
-        .then((res) => setResponse(res.data.pictures));
+        .get(`https://api.jikan.moe/v3${pathURL}`, {
+          params: {
+            _limit: 10,
+          },
+        })
+        .then((res) => setResponse(res.data.results));
 
       // setResponse(result.data.pictures);
     };
