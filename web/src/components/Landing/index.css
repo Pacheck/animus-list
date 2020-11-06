@@ -1,5 +1,35 @@
-.landing-page .carrousel-container {
+.landing-page {
+  height: 100%;
+}
+.landing-page-container .carousel-root {
+  width: 30%;
+  min-width: 400px;
+
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+/* Thumbnail slides */
+.landing-page-container .carousel:nth-child(2) {
+  width: 90vw;
+}
+
+.landing-page-container .carousel-slider {
+  width: 80% !important;
+  border-radius: 5px;
+}
+
+.landing-page-container {
+  width: 100%;
+  height: 90%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.text-area {
+  width: 300px;
 }
