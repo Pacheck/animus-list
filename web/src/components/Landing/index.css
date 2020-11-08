@@ -50,6 +50,7 @@
 
 section {
   position: relative;
+  /* overflow: hidden; */
 }
 
 a {
@@ -58,27 +59,43 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 48px;
 
   text-decoration: none;
   color: #fff;
 }
 
+.image-items {
+  display: flex;
+  margin-top: 50px;
+}
+
+.image-items img {
+  margin: 0px 10px;
+}
+
+.image-items img:hover {
+  cursor: pointer;
+  margin: 0 40px;
+  transform: scale(1.2);
+}
+
 #section1 {
   width: 100%;
-  /* height: 200px; */
-  background-color: salmon;
+  height: 350px;
+  /* background-color: salmon; */
 }
 
 #section2 {
   width: 100%;
-  height: 200px;
-  background-color: rgb(6, 93, 64);
+  height: 350px;
+  /* background-color: rgb(6, 93, 64); */
 }
 
 #section3 {
   width: 100%;
-  height: 200px;
-  background-color: rgb(47, 3, 77);
+  height: 350px;
+  /* background-color: rgb(47, 3, 77); */
 }
 
 #voltar {

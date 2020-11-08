@@ -39,37 +39,30 @@ const Landing = () => {
                             <AiOutlineLeft size={50} cursor="pointer" />
                         </a>
                         <div className="image-items">
-                            <img src={imageTest1} alt="movie"/>
-                            <img src={imageTest2} alt="movie"/>
-                            <img src={imageTest1} alt="movie"/>
-                            <img src={imageTest2} alt="movie"/>
-                            <img src={imageTest1} alt="movie"/>
-                            <img src={imageTest2} alt="movie"/>
-                            
+                            {images.map(image => {
+                                return <img key={image.url} src={image.image_url} alt="anime"/>
+                            })}
                         </div>
                         <a id="avancar" href="#section2">
                             <AiOutlineRight size={50}/>
                         </a>
                     </section>
                     <section id="section2">
-                        <a id="voltar" href="#section1">Voltar</a>
-                        <img src={imageTest1} alt="movie"/>
-                            <img src={imageTest2} alt="movie"/>
-                            <img src={imageTest1} alt="movie"/>
-                            <img src={imageTest2} alt="movie"/>
-                            <img src={imageTest1} alt="movie"/>
-                            <img src={imageTest2} alt="movie"/>
-                        <a id="avancar" href="#section3">Avançar</a>
+                        <a id="voltar" href="#section1">
+                            <AiOutlineLeft size={50} cursor="pointer" />
+                        </a>
+                            
+                        <a id="avancar" href="#section3">
+                            <AiOutlineRight size={50}/>
+                        </a>
                     </section>
                     <section id="section3">
-                        <a id="voltar" href="#section2">Voltar</a>
-                        <img src={imageTest1} alt="movie"/>
-                            <img src={imageTest2} alt="movie"/>
-                            <img src={imageTest1} alt="movie"/>
-                            <img src={imageTest2} alt="movie"/>
-                            <img src={imageTest1} alt="movie"/>
-                            <img src={imageTest2} alt="movie"/>
-                        <a id="avancar" href="#section1">Avançar</a>
+                        <a id="voltar" href="#section2">
+                            <AiOutlineLeft size={50} cursor="pointer" />
+                        </a>
+                        <a id="avancar" href="#section1">
+                            <AiOutlineRight size={50}/>
+                        </a>
                     </section>
                 </div>
 
