@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 import './index.css'
 
+import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
+
 import Navigator from '../Navigator';
 
 import useAPI from '../../hooks/api.js';
@@ -29,23 +31,48 @@ const Landing = () => {
         <div className="landing-page">
             <Navigator />
            
-           <div className="landing-page-container">
-                <Carousel autoPlay infiniteLoop showThumbs={false} showIndicators={false}>
-                    {images.map(img => {
-                        return(
-                            <a href={img.url} target="_blank" key={img.image_url}>
-                                <div>
-                                <img src={img.image_url} alt="testando"/>
-                                <p className="legend">{img.title}</p>
-                                </div>
-                            </a>
-                        )
-                    })}
-                </Carousel>
-                    <div className="landing-info">
-                        <p className="text-area">Uma página criada a partir do site MAL, via web scrapping</p>
-                        <button>Next</button>
-                    </div>
+            <div className="landing-page-container">
+
+                <div className="images-slider">
+                    <section id="section1">
+                        <a id="voltar" href="#section3">
+                            <AiOutlineLeft size={50} cursor="pointer" />
+                        </a>
+                        <div className="image-items">
+                            <img src={imageTest1} alt="movie"/>
+                            <img src={imageTest2} alt="movie"/>
+                            <img src={imageTest1} alt="movie"/>
+                            <img src={imageTest2} alt="movie"/>
+                            <img src={imageTest1} alt="movie"/>
+                            <img src={imageTest2} alt="movie"/>
+                            
+                        </div>
+                        <a id="avancar" href="#section2">
+                            <AiOutlineRight size={50}/>
+                        </a>
+                    </section>
+                    <section id="section2">
+                        <a id="voltar" href="#section1">Voltar</a>
+                        <img src={imageTest1} alt="movie"/>
+                            <img src={imageTest2} alt="movie"/>
+                            <img src={imageTest1} alt="movie"/>
+                            <img src={imageTest2} alt="movie"/>
+                            <img src={imageTest1} alt="movie"/>
+                            <img src={imageTest2} alt="movie"/>
+                        <a id="avancar" href="#section3">Avançar</a>
+                    </section>
+                    <section id="section3">
+                        <a id="voltar" href="#section2">Voltar</a>
+                        <img src={imageTest1} alt="movie"/>
+                            <img src={imageTest2} alt="movie"/>
+                            <img src={imageTest1} alt="movie"/>
+                            <img src={imageTest2} alt="movie"/>
+                            <img src={imageTest1} alt="movie"/>
+                            <img src={imageTest2} alt="movie"/>
+                        <a id="avancar" href="#section1">Avançar</a>
+                    </section>
+                </div>
+
             </div>
                 
             
