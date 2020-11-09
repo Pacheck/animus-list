@@ -5,6 +5,7 @@ import './index.css'
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
 
 import Navigator from '../Navigator';
+import Section from '../Section'
 
 import useAPI from '../../hooks/api.js';
 
@@ -17,21 +18,21 @@ import { Carousel } from 'react-responsive-carousel';
 const Landing = () => {
     
     // const api = useAPI('anime/1/pictures');
-    const api = useAPI('search/anime?q=sword art online');
-    console.log(api)
+    const api = useAPI('search/anime?q=Naruto');
+
     const [images, setImages] = useState([]);
 
     useEffect(() => {
         api.then(res => setImages(res))
     }, [api])
 
-    console.log(images)
-
     return (
         <div className="landing-page">
             <Navigator />
-           
-            <div className="landing-page-container">
+
+            {images && <Section images={images} setSliderImages={setImages} />}
+
+            {/* <div className="landing-page-container">
 
                 <div className="images-slider">
                     <section id="section1">
@@ -40,7 +41,9 @@ const Landing = () => {
                         </a>
                         <div className="image-items">
                             {images.map(image => {
-                                return <img key={image.url} src={image.image_url} alt="anime"/>
+                                return (
+                                    <img  key={image.url} src={image.image_url} alt="anime"/>                    
+                                )
                             })}
                         </div>
                         <a id="avancar" href="#section2">
@@ -66,7 +69,7 @@ const Landing = () => {
                     </section>
                 </div>
 
-            </div>
+            </div> */}
                 
             
         </div>
